@@ -126,8 +126,9 @@ You can find more scripts at `scripts` directory.
 
 ### Make aligned dataset
 ```bash
-python ./dataset/make_ga_dataset_aligned.py --dataset-path <dataset_path>
+python ./dataset/make_ga_dataset_aligned.py --dataset-path [dataset_path]
 ```
+
 
 ### SACycleGAN train/test
 - Train a model:
