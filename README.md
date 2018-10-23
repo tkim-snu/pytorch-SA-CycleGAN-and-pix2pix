@@ -123,6 +123,35 @@ The test results will be saved to a html file here: `./results/facades_pix2pix/t
 
 You can find more scripts at `scripts` directory.
 
+
+### Make aligned dataset
+```bash
+python ./dataset/make_ga_dataset_aligned.py --dataset-path <dataset_path>
+```
+
+### SACycleGAN train/test
+- Train a model:
+```bash
+python train.py --dataroot ./datasets/voices_f --name voices_f_sa_cycle_gan --model sa_cycle_gan --no_flip
+```
+
+- Test the model
+```bash
+python test_sa.py --dataroot ./datasets/voices_f --name voices_f_sa_cycle_gan --model sa_cycle_gan --no_flip
+```
+
+
+### SAP2P train/test
+- Train a model:
+```bash
+python train.py --dataroot ./datasets/voices_f --name voices_f_sa_p2p --model sa_p2p --direction AtoB --loadSize 256 --resize_or_crop resize --no_flip
+```
+
+- Test the model
+```bash
+python test_sa.py --dataroot ./datasets/voices_f --name voices_f_sa_p2p --model sa_p2p --direction AtoB --loadSize 256 --resize_or_crop resize --no_flip
+```
+
 ### Apply a pre-trained model (CycleGAN)
 - You can download a pretrained model (e.g. horse2zebra) with the following script:
 ```bash
